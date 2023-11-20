@@ -1,0 +1,50 @@
+diff --git a/node_modules/@react-native-community/viewpager/android/src/main/java/com/reactnativecommunity/viewpager/ReactViewPagerManager.java b/node_modules/@react-native-community/viewpager/android/src/main/java/com/reactnativecommunity/viewpager/ReactViewPagerManager.java
+index a81140e..331b92e 100644
+--- a/node_modules/@react-native-community/viewpager/android/src/main/java/com/reactnativecommunity/viewpager/ReactViewPagerManager.java
++++ b/node_modules/@react-native-community/viewpager/android/src/main/java/com/reactnativecommunity/viewpager/ReactViewPagerManager.java
+@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
+  */
+ public class ReactViewPagerManager extends ViewGroupManager<ReactViewPager> {
+ 
+-  private static final String REACT_CLASS = "RNCViewPager";
++  private static final String REACT_CLASS = "RNCViewPagerTab";
+ 
+   private static final int COMMAND_SET_PAGE = 1;
+   private static final int COMMAND_SET_PAGE_WITHOUT_ANIMATION = 2;
+diff --git a/node_modules/@react-native-community/viewpager/ios/ReactViewPagerManager.m b/node_modules/@react-native-community/viewpager/ios/ReactViewPagerManager.m
+index a01b856..f170241 100644
+--- a/node_modules/@react-native-community/viewpager/ios/ReactViewPagerManager.m
++++ b/node_modules/@react-native-community/viewpager/ios/ReactViewPagerManager.m
+@@ -5,7 +5,7 @@ @implementation ReactViewPagerManager
+ 
+ #pragma mark - RTC
+ 
+-RCT_EXPORT_MODULE(RNCViewPager)
++RCT_EXPORT_MODULE(RNCViewPagerTab)
+ 
+ RCT_EXPORT_VIEW_PROPERTY(initialPage, NSInteger)
+ RCT_EXPORT_VIEW_PROPERTY(pageMargin, NSInteger)
+diff --git a/node_modules/@react-native-community/viewpager/js/ViewPager.js b/node_modules/@react-native-community/viewpager/js/ViewPager.js
+index 3dc1811..c2b51d4 100644
+--- a/node_modules/@react-native-community/viewpager/js/ViewPager.js
++++ b/node_modules/@react-native-community/viewpager/js/ViewPager.js
+@@ -29,7 +29,7 @@ import {childrenWithOverriddenStyle} from './utils';
+ const NativeViewPager = require('./ViewPagerNativeComponent');
+ 
+ const VIEW_PAGER_REF = 'viewPager';
+-const VIEW_MANAGER_NAME = 'RNCViewPager';
++const VIEW_MANAGER_NAME = 'RNCViewPagerTab';
+ 
+ function getViewManagerConfig(viewManagerName) {
+   if (!UIManager.getViewManagerConfig) {
+diff --git a/node_modules/@react-native-community/viewpager/js/ViewPagerNativeComponent.js b/node_modules/@react-native-community/viewpager/js/ViewPagerNativeComponent.js
+index 60aeee0..53c0ef4 100644
+--- a/node_modules/@react-native-community/viewpager/js/ViewPagerNativeComponent.js
++++ b/node_modules/@react-native-community/viewpager/js/ViewPagerNativeComponent.js
+@@ -19,5 +19,5 @@ import type {ViewPagerProps} from './types';
+ type ViewPagerNativeType = Class<NativeComponent<ViewPagerProps>>;
+ 
+ module.exports = ((requireNativeComponent(
+-  'RNCViewPager',
++  'RNCViewPagerTab',
+ ): any): ViewPagerNativeType);

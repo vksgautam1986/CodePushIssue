@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CareSmartz360 Agency App</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">90954CB1i05-0OgNoh-BqEemzHyFC0reKsZEy</string>
+    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
+    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
+</resources>
